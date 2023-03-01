@@ -87,14 +87,14 @@
             </ng-container>
 
             <div>
-                <ng-container class="selectAba">
-                    <h1 class="statusField">Status</h1>
-                    <div class="statsCards HP">HP: {{pokemonFinded.stats['0']['base_stat']}}</div>
-                    <div class="statsCards Attack">Attack: {{pokemonFinded.stats['1']['base_stat']}}</div>
-                    <div class="statsCards Defense">Defense: {{pokemonFinded.stats['2']['base_stat']}}</div>
-                    <div class="statsCards SpecialAttack">Special Attack: {{pokemonFinded.stats['3']['base_stat']}}</div>
-                    <div class="statsCards SpecialDefense">Special Defense: {{pokemonFinded.stats['4']['base_stat']}}</div>
-                </ng-container>
+                <h1 class="statusField">Status</h1>
+                <div class="alignFieldCard">
+                    <span class="statsCardsAlign HP">HP: {{pokemonFinded.stats['0']['base_stat']}}</span>
+                    <span class="statsCardsAlign Attack">Attack: {{pokemonFinded.stats['1']['base_stat']}}</span>
+                    <span class="statsCardsAlign Defense">Defense: {{pokemonFinded.stats['2']['base_stat']}}</span>
+                    <span class="statsCardsAlign SpecialAttack">Sp Attack: {{pokemonFinded.stats['3']['base_stat']}}</span>
+                    <span class="statsCardsAlign SpecialDefense">Sp Defense: {{pokemonFinded.stats['4']['base_stat']}}</span>
+                </div>
             </div>
 
             <ng-container *ngIf="carregarMaisInformacoes">
