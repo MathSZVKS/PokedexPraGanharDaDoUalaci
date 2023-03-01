@@ -24,7 +24,7 @@
             <h1 class="numberDex">{{numberOfDex}}</h1>
             <img class="imageIndex" [src]="getImagePokemon()">
             <br> <h1 class="setCursive index1">{{pokemon}}</h1>
-            <br> <h3 class="setCursive index1">{{description}}</h3>
+            <br> <h3 class="setCursiveDetails index1">{{description}}</h3>
         </div>  
     
             <ng-container *ngIf="carregarMaisInformacoes">
@@ -86,11 +86,15 @@
                 </ng-container>
             </ng-container>
 
-            <div class="infoPokemon">
-    
-                <button mat-button class="selectAba">Status</button>
-                <button mat-button class="selectAba">Status</button>
-                
+            <div>
+                <ng-container class="selectAba">
+                    <h1 class="statusField">Status</h1>
+                    <div class="statsCards HP">HP: {{pokemonFinded.stats['0']['base_stat']}}</div>
+                    <div class="statsCards Attack">Attack: {{pokemonFinded.stats['1']['base_stat']}}</div>
+                    <div class="statsCards Defense">Defense: {{pokemonFinded.stats['2']['base_stat']}}</div>
+                    <div class="statsCards SpecialAttack">Special Attack: {{pokemonFinded.stats['3']['base_stat']}}</div>
+                    <div class="statsCards SpecialDefense">Special Defense: {{pokemonFinded.stats['4']['base_stat']}}</div>
+                </ng-container>
             </div>
 
             <ng-container *ngIf="carregarMaisInformacoes">

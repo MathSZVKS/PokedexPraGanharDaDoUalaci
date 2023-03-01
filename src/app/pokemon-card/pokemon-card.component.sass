@@ -4,6 +4,8 @@
     border-radius: 10px
     box-shadow: 0 0 9px 0px #53363b
     margin: 15px
+    z-index: 1
+    position: relative
 
 .PokemonCardMore
     background: radial-gradient(circle, rgba(190,198,203,1) 26%, rgba(110,200,247,1) 100%)
@@ -33,6 +35,8 @@
     width: 20%
     height: 20%
     display: inline-block
+    z-index: 1
+    position: relative
 
 .PokemonCardImage:hover
     background: radial-gradient(circle, rgba(190,198,203,1) 26%, rgba(110,200,247,1) 100%)
@@ -43,6 +47,8 @@
     width: 20%
     height: 20%
     display: inline-block
+    z-index: 1
+    position: relative
 
 .PokemonCardDetails
     background: radial-gradient(circle, rgba(190,198,203,1) 26%, rgba(110,200,247,1) 100%)
@@ -53,6 +59,8 @@
     width: 25%
     height: 25%
     display: inline-block
+    z-index: 1
+    position: relative
 
 .PokemonCardDetails:hover
     background: radial-gradient(circle, rgba(190,198,203,1) 26%, rgba(110,200,247,1) 100%)
@@ -63,6 +71,8 @@
     width: 25%
     height: 25%
     display: inline-block
+    z-index: 1
+    position: relative
 
 .PokemonImage
     width: 30%
@@ -130,6 +140,13 @@
     padding-left: 10px
     padding-bottom: 2px
     text-align: center
+
+.statusField
+    width: 20%
+    margin: 10px 10px 10px 10px
+    color: #333131
+    text-align: center
+    font-family: cursive
 
 .moveCards:hover
     background: rgb(43 115 185)
@@ -236,6 +253,11 @@
 .setCursive
     font-family: cursive
     color: #444444
+    font-size: 36px
+
+.setCursiveDetails
+    font-family: cursive
+    color: #444444
 
 .infoPokemon
     background-color: #ffffffcc
@@ -286,3 +308,28 @@
 .index1
     position: sticky
     z-index: 1
+
+.HP
+    width: 20%
+    background: linear-gradient(90deg, rgba(76,76,218,1) 35%, rgba(0,212,255,1) 100%) !important
+    color: white !important
+
+.Attack
+    width: 20%
+    background: linear-gradient(90deg, rgba(218,76,176,1) 35%, rgba(255,0,101,1) 100%) !important
+    color: white !important
+
+.Defense
+    width: 20%
+    background: linear-gradient(90deg, rgba(218,179,76,1) 35%, rgba(255,237,0,1) 100%) !important
+    color: white !important
+
+.SpecialAttack
+    width: 20%
+    background: linear-gradient(90deg, rgba(218,76,137,1) 35%, rgba(199,0,255,1) 100%) !important
+    color: white !important
+
+.SpecialDefense
+    width: 20%
+    background: linear-gradient(90deg, rgba(218,153,76,1) 35%, rgba(255,173,0,1) 100%) !important
+    color: white !important
