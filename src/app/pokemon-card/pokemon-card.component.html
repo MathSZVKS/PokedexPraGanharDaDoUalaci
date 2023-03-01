@@ -21,9 +21,10 @@
     class="PokemonCardMore"
 >   
         <div class="PokemonCenter">
-            <img [src]="getImagePokemon()">
-            <br> <h1 class="setCursive">{{pokemon}}</h1>
-            <br> <h3 class="setCursive">{{description}}</h3>
+            <h1 class="numberDex">{{numberOfDex}}</h1>
+            <img class="imageIndex" [src]="getImagePokemon()">
+            <br> <h1 class="setCursive index1">{{pokemon}}</h1>
+            <br> <h3 class="setCursive index1">{{description}}</h3>
         </div>  
     
             <ng-container *ngIf="carregarMaisInformacoes">

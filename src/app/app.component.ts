@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-pokedex';
-  url = 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png';
+  url = 'https://media.discordapp.net/attachments/1019237103764250676/1080299040375312444/1200px-International_Pok_C3_A9mon_logo.svg.png';
   class = 'pokemonTitle';
 }

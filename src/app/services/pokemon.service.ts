@@ -13,7 +13,7 @@ export class PokemonService {
   }
 
   async loadPokemons() {
-    await this.httpClient.get<any>('https://pokeapi.co/api/v2/pokemon?limit=400').subscribe(
+    await this.httpClient.get<any>('https://pokeapi.co/api/v2/pokemon?limit=151').subscribe(
       (data) => {
         this.pokemons = data.results;
       }
