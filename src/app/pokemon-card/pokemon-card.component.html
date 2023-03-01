@@ -24,7 +24,9 @@
             <h1 class="numberDex">{{numberOfDex}}</h1>
             <img class="imageIndex" [src]="getImagePokemon()">
             <br> <h1 class="setCursive index1">{{pokemon}}</h1>
-            <br> <h3 class="setCursiveDetails index1">{{description}}</h3>
+            <ng-container *ngFor="let abilitie of pokemonFinded.abilities">
+                <span id="abilitie">{{abilitie.ability.name}}</span>
+            </ng-container>
         </div>  
     
             <ng-container *ngIf="carregarMaisInformacoes">
@@ -94,6 +96,13 @@
                     <span class="statsCardsAlign Defense">Defense: {{pokemonFinded.stats['2']['base_stat']}}</span>
                     <span class="statsCardsAlign SpecialAttack">Sp Attack: {{pokemonFinded.stats['3']['base_stat']}}</span>
                     <span class="statsCardsAlign SpecialDefense">Sp Defense: {{pokemonFinded.stats['4']['base_stat']}}</span>
+                </div>
+            </div>
+
+            <div>
+                <h1 class="statusField">Sobre</h1>
+                <div class="alignFieldCard">   
+                    <h3 class="setCursiveDetails index1">{{description}}</h3>
                 </div>
             </div>
 
