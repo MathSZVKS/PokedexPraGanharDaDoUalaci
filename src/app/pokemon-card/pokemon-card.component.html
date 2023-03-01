@@ -1,0 +1,155 @@
+<div 
+    *ngIf="simpleSearch" 
+    class="PokemonCard"
+>
+    <img [src]="getImagePokemon()">
+    <br> {{pokemon}}
+    <br> DexID: {{numberOfDex}}
+
+    <ng-container *ngIf="!carregarMaisInformacoes">
+        <br> <button (click)="maisInformacoes(pokemon)" mat-raised-button class="ButonMore">+</button>
+    </ng-container>
+
+    <ng-container *ngIf="carregarMaisInformacoes">
+        <br> <button mat-raised-button class="ButtonExibindo">Exibindo</button>
+    </ng-container>
+</div>
+
+<div class="modal" *ngIf="modalAberta">
+    <div 
+    *ngIf="simpleSearch" 
+    class="PokemonCardMore"
+>   
+        <div class="PokemonCenter">
+            <img [src]="getImagePokemon()">
+            <br> <h1 class="setCursive">{{pokemon}}</h1>
+            <br> <h3 class="setCursive">{{description}}</h3>
+        </div>  
+    
+            <ng-container *ngIf="carregarMaisInformacoes">
+                <ng-container *ngFor="let type of pokemonFinded.types">
+                    <div *ngIf="type.type.name == 'normal'" style="background: grey;" class="pokemonTypeMore">
+                        {{type.type.name}}
+                    </div>
+                    <div *ngIf="type.type.name == 'fighting'" style="background: rgb(63, 37, 37);" class="pokemonTypeMore">
+                        {{type.type.name}}
+                    </div>
+                    <div *ngIf="type.type.name == 'flying'" style="background: rgb(168, 224, 241);" class="pokemonTypeMore">
+                        {{type.type.name}}
+                    </div>
+                    <div *ngIf="type.type.name == 'poison'" style="background: rgb(139, 42, 204);" class="pokemonTypeMore">
+                        {{type.type.name}}
+                    </div>
+                    <div *ngIf="type.type.name == 'ground'" style="background: rgb(241, 202, 95);" class="pokemonTypeMore">
+                        {{type.type.name}}
+                    </div>
+                    <div *ngIf="type.type.name == 'rock'" style="background: rgb(58, 48, 20);" class="pokemonTypeMore">
+                        {{type.type.name}}
+                    </div>
+                    <div *ngIf="type.type.name == 'bug'" style="background: rgb(170, 228, 61);" class="pokemonTypeMore">
+                        {{type.type.name}}
+                    </div>
+                    <div *ngIf="type.type.name == 'ghost'" style="background: rgb(74, 18, 179);" class="pokemonTypeMore">
+                        {{type.type.name}}
+                    </div>
+                    <div *ngIf="type.type.name == 'stell'" style="background: rgb(98, 139, 155);" class="pokemonTypeMore">
+                        {{type.type.name}}
+                    </div>
+                    <div *ngIf="type.type.name == 'fire'" style="background: rgb(250, 62, 49);" class="pokemonTypeMore">
+                        {{type.type.name}}
+                    </div>
+                    <div *ngIf="type.type.name == 'water'" style="background: rgb(58, 117, 228);" class="pokemonTypeMore">
+                        {{type.type.name}}
+                    </div>
+                    <div *ngIf="type.type.name == 'grass'" style="background: rgb(28, 145, 12);" class="pokemonTypeMore">
+                        {{type.type.name}}
+                    </div>
+                    <div *ngIf="type.type.name == 'electric'" style="background: rgb(221, 201, 17);" class="pokemonTypeMore">
+                        {{type.type.name}}
+                    </div>
+                    <div *ngIf="type.type.name == 'psychic'" style="background: rgb(194, 66, 187)" class="pokemonTypeMore">
+                        {{type.type.name}}
+                    </div>
+                    <div *ngIf="type.type.name == 'ice'" style="background: rgb(66, 175, 194)" class="pokemonTypeMore">
+                        {{type.type.name}}
+                    </div>
+                    <div *ngIf="type.type.name == 'dragon'" style="background: rgb(25, 10, 110)" class="pokemonTypeMore">
+                        {{type.type.name}}
+                    </div>
+                    <div *ngIf="type.type.name == 'dark'" style="background: rgb(32, 21, 8)" class="pokemonTypeMore">
+                        {{type.type.name}}
+                    </div>
+                    <div *ngIf="type.type.name == 'fairy'" style="background: rgb(250, 120, 250)" class="pokemonTypeMore">
+                        {{type.type.name}}
+                    </div>
+                </ng-container>
+            </ng-container>
+
+            <div class="infoPokemon">
+    
+                <button mat-button class="selectAba">Status</button>
+                <button mat-button class="selectAba">Status</button>
+                
+            </div>
+
+            <ng-container *ngIf="carregarMaisInformacoes">
+                <br> <button  (click)="voltar()" mat-raised-button class="ButtonVoltar">Voltar</button>
+            </ng-container>  
+    </div>
+</div>
+
+<div 
+    *ngIf="!simpleSearch" 
+    class="PokemonCardImage"
+>
+    <div class="PokemonImage">
+        <img [src]="getImagePokemon()">
+        <br> {{pokemon}}
+        <br> DexID: {{numberOfDex}}
+    </div>
+</div>
+
+<div *ngIf="!simpleSearch" class="PokemonCardDetails" >
+    <span class="spanFontSize"> &#11088; Habilidades:</span>
+    <br><br>
+
+    <div *ngFor="let abilitie of abilities">
+         * {{abilitie.ability.name}}
+    </div>
+
+    <div class="spaceDescriptionBT">
+        <span class="spanFontSize"> &#11088; Experiência Base:</span>
+        {{baseExperience}}
+    </div>
+
+    <div >
+        <span class="spanFontSize"> &#11088; Peso:</span>
+        {{height}}Kg
+    </div>
+</div>
+
+<div *ngIf="!simpleSearch" class="statusCards" >
+    <div>
+        <span class="spanStatus">Status</span>
+    </div>
+    <h3 class="statsCards" *ngFor="let stat of stats, index as i">
+        {{stat.stat.name}} : {{stat.base_stat}}
+    </h3>
+</div>
+
+<div *ngIf="!simpleSearch" class="PokemonCardMoves" >
+    <div>
+        <span class="spanMoves">Movimentos</span>
+    </div>
+    <h3 class="moveCards" *ngFor="let move of moves, index as i">
+            {{move.move.name}}
+    </h3>
+</div>
+
+
+
+
+
+
+
+

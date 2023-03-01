@@ -1,0 +1,49 @@
+<div class="navBar">
+    <button (click)="reloadPokemons()" class="buttonNavBar" mat-button>Pesquisar Pokémon</button>
+    <button (click)="reloadPokemons()" class="buttonNavBar" mat-button>Lendários</button>
+    <button (click)="reloadPokemons()" class="buttonNavBar" mat-button>Pokémons Recentes</button>
+    <button (click)="reloadPokemons()" class="buttonNavBar" mat-button>Sprites</button>
+</div>
+
+<input #mySearch 
+    (change)="searching(mySearch.value)" 
+    name ="pesquisarPokemon" 
+    class= "pokemon-search" 
+    type="search" 
+    placeholder="Pesquisar Pokemon" 
+    autofocus
+>
+
+<input *ngIf="simpleSearch" #qtsPokemons 
+    (change)="alterLimit(qtsPokemons.value)" 
+    name ="quantidadeDePokemons" 
+    class= "pokemon-qtd" 
+    type="Quantidade" 
+    placeholder="Quantidade" 
+    autofocus
+>
+
+<button (click)="reloadPokemons()" *ngIf="!simpleSearch" class="pokemon-button" mat-raised-button color="warn">Voltar</button>
+
+<div *ngIf="simpleSearch" class="pokemon-list">
+    <app-pokemon-card *ngFor="let pokemon of pokemonService.pokemons, index as i"
+        [pokemon]="pokemon['name']"
+        [numberOfDex]="i + 1"
+        [simpleSearch]="simpleSearch"
+    ></app-pokemon-card>
+</div>
+
+<div *ngIf="!simpleSearch">
+    <app-pokemon-card
+        [pokemon]="pokemonFinded['name']"
+        [numberOfDex]="pokemonFinded['id']"
+        [simpleSearch]="simpleSearch"
+        [abilities]="pokemonFinded['abilities']"
+        [baseExperience]="pokemonFinded['base_experience']"
+        [height]="pokemonFinded['height']"
+        [moves]="pokemonFinded['moves']"
+        [stats]="pokemonFinded['stats']"
+    ></app-pokemon-card>
+</div>
+
+
