@@ -1,5 +1,5 @@
 <div 
-    *ngIf="simpleSearch && !lendario" 
+    *ngIf="simpleSearch && tipo == 'normal'" 
     class="PokemonCard"
 >
     <img [src]="getImagePokemon()">
@@ -15,7 +15,23 @@
 </div>
 
 <div 
-    *ngIf="simpleSearch && lendario" 
+    *ngIf="simpleSearch && tipo == 'pseudoLendario'" 
+    class="PokemonCardPseudoLendario"
+>
+    <img [src]="getImagePokemon()">
+    <br> {{pokemon}}
+    <br> DexID: {{numberOfDex}}
+    <ng-container *ngIf="!carregarMaisInformacoes">
+        <br> <button (click)="maisInformacoes(pokemon)" mat-raised-button class="ButonMore">+</button>
+    </ng-container>
+
+    <ng-container *ngIf="carregarMaisInformacoes">
+        <br> <button mat-raised-button class="ButtonExibindo">Exibindo</button>
+    </ng-container>
+</div>
+
+<div 
+    *ngIf="simpleSearch && tipo == 'lendario'" 
     class="PokemonCardLendario"
 >
     <img [src]="getImagePokemon()">

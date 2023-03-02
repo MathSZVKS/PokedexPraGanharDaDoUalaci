@@ -1,12 +1,14 @@
 <div class="navBar">
     <button (click)="alterarAbaAtiva('pesquisar')" class="buttonNavBar" mat-button>Pesquisar Pokémon</button>
+    <button (click)="alterarAbaAtiva('subLendarios')" class="buttonNavBar" mat-button>Pseudo-Lendários</button>
     <button (click)="alterarAbaAtiva('lendarios')" class="buttonNavBar" mat-button>Lendários</button>
+    <button (click)="alterarAbaAtiva('miticos')" class="buttonNavBar" mat-button>Miticos</button>
     <button (click)="alterarAbaAtiva('recentes')" class="buttonNavBar" mat-button>Pokémons Recentes</button>
     <button (click)="alterarAbaAtiva('sprites')" class="buttonNavBar" mat-button>Sprites</button>
 </div>
 
 <input #mySearch 
-    *ngIf="abaAtiva != 'lendarios'"
+    *ngIf="abaAtiva == 'pesquisar'"
     (change)="searching(mySearch.value)" 
     name ="pesquisarPokemon" 
     class= "pokemon-search" 
@@ -15,7 +17,7 @@
     autofocus
 >
 
-<input *ngIf="simpleSearch && abaAtiva != 'lendarios'" #qtsPokemons 
+<input *ngIf="simpleSearch && abaAtiva == 'pesquisar'" #qtsPokemons 
     (change)="alterLimit(qtsPokemons.value)" 
     name ="quantidadeDePokemons" 
     class= "pokemon-qtd" 
@@ -31,16 +33,25 @@
         [pokemon]="pokemon['name']"
         [numberOfDex]="i + 1"
         [simpleSearch]="simpleSearch"
-        [lendario]="false"
+        [tipo]="'normal'"
+    ></app-pokemon-card>
+</div>
+
+<div *ngIf="simpleSearch && abaAtiva == 'subLendarios'" class="pokemon-list">
+    <app-pokemon-card *ngFor="let subLendario of subLendarios"
+        [pokemon]="subLendario['name']"
+        [numberOfDex]="subLendario.id"
+        [simpleSearch]="simpleSearch"
+        [tipo]="'pseudoLendario'"
     ></app-pokemon-card>
 </div>
 
 <div *ngIf="simpleSearch && abaAtiva == 'lendarios'" class="pokemon-list">
-    <app-pokemon-card
-        [pokemon]="lendarios['name']"
-        [numberOfDex]="lendarios.id"
+    <app-pokemon-card *ngFor="let lendario of lendarios"
+        [pokemon]="lendario['name']"
+        [numberOfDex]="lendario.id"
         [simpleSearch]="simpleSearch"
-        [lendario]="true"
+        [tipo]="'lendario'"
     ></app-pokemon-card>
 </div>
 
