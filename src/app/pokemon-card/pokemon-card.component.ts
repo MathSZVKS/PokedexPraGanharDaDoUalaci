@@ -17,6 +17,7 @@ export class PokemonCardComponent {
   span = document.getElementsByClassName("close")[0];
 
   @Input() pokemon = '';
+  @Input() lendario: any;
   @Input() numberOfDex = 0;
   @Input() simpleSearch: any;
   @Input() abilities: any;

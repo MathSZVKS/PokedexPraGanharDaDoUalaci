@@ -7,29 +7,48 @@
     z-index: 1
     position: relative
 
-#abilitie
-    color: #747474
-    margin-left: 10px
-
-.PokemonCardMore
-    background: radial-gradient(circle, rgba(130,204,230,1) 35%, rgba(230,214,251,1) 100%)
-    padding: 15px
-    width: 60%
-    border-radius: 10px
-    box-shadow: 0 0 100px 0px #53363b
-    margin: 15px
-    margin-left: auto
-    margin-right: auto
-    transition: width 2s
-
 .PokemonCard:hover
     background: radial-gradient(circle, rgba(190,198,203,1) 26%, rgba(110,200,247,1) 100%)
     padding: 15px
     border-radius: 9px
-    box-shadow: 0 0 10px 3px #2f68b3
+    box-shadow: 0 0 40px 10px #2f68b3
     margin: 15px
     transform: scale(1.1)
     transition: 200ms linear
+
+.PokemonCardLendario
+    background: radial-gradient(circle, rgba(254,188,56,0.7063200280112045) 26%, rgba(255,229,122,0.5354516806722689) 100%)
+    padding: 15px
+    border-radius: 10px
+    box-shadow: 0 0 20px 0px #f3d528
+    margin: 15px
+    z-index: 1
+    position: relative
+
+.PokemonCardLendario:hover
+    background: radial-gradient(circle, rgba(254,188,56,0.7063200280112045) 26%, rgba(255,229,122,0.5354516806722689) 100%)
+    padding: 15px
+    border-radius: 9px
+    box-shadow: 0 0 90px 10px #f3d528
+    margin: 15px
+    transform: scale(1.1)
+    transition: 200ms linear
+
+#abilitie
+    color: #747474
+    margin-left: 10px
+    z-index: 1
+    position: sticky
+
+.PokemonCardMore
+    background: radial-gradient(circle, rgba(130,204,230,1) 35%, rgba(230,214,251,1) 100%)
+    padding: 15px
+    width: 40%
+    border-radius: 10px
+    box-shadow: 0 0 100px 0px #53363b
+    margin-left: auto
+    margin-right: auto
+    transition: width 2s
 
 .PokemonCardImage
     background: radial-gradient(circle, rgba(190,198,203,1) 26%, rgba(110,200,247,1) 100%)
@@ -54,6 +73,8 @@
     display: inline-block
     z-index: 1
     position: relative
+    transform: scale(1.1)
+    transition: 200ms linear
 
 .PokemonCardDetails
     background: radial-gradient(circle, rgba(190,198,203,1) 26%, rgba(110,200,247,1) 100%)
@@ -78,6 +99,8 @@
     display: inline-block
     z-index: 1
     position: relative
+    transform: scale(1.1)
+    transition: 200ms linear
 
 .PokemonImage
     width: 30%
@@ -118,6 +141,8 @@
     margin: 15px
     width: 60%
     height: 70%
+    transform: scale(1.1)
+    transition: 200ms linear
     display: inline-block
 
 .moveCards
@@ -160,6 +185,8 @@
     text-align: center
     margin-left: auto
     margin-right: auto
+    z-index: 1
+    position: sticky
 
 .statusField
     width: 20%
@@ -170,6 +197,8 @@
     margin-left: auto
     margin-right: auto
     margin-top: 29px
+    position: sticky
+    z-index: 1
 
 .moveCards:hover
     background: rgb(43 115 185)
@@ -219,6 +248,10 @@
     margin: 15px
     width: 25%
     height: 25%
+    transform: scale(1.1)
+    z-index: 1
+    position: sticky
+    transition: 200ms linear
 
 .ButonMore
     margin-top: 5%
@@ -258,6 +291,8 @@
     margin-left: auto
     margin-right: auto
     height: 23px
+    z-index: 1
+    position: sticky
 
 .modal 
   position: fixed

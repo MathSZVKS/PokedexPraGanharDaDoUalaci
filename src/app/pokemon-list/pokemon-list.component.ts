@@ -11,10 +11,25 @@ import { PokemonService } from '../services/pokemon.service';
 export class PokemonListComponent {
   pokemonFinded: any;
   simpleSearch = true;
+  abaAtiva = 'pesquisar';
+  lendarios: any;
 
   constructor(
     public pokemonService: PokemonService,
     private toastr: ToastrService){  
+  }
+
+  ngOnInit(){
+    this.pokemonService.getPokemonByName('151').subscribe(
+      (dados) => {
+        this.lendarios = dados;
+        console.log(this.lendarios);
+      }
+    )
+  }
+
+  alterarAbaAtiva(aba: any){
+    this.abaAtiva = aba;
   }
 
   searching(search: string){
