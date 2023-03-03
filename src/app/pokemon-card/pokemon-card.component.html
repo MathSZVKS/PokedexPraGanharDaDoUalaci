@@ -46,6 +46,22 @@
     </ng-container>
 </div>
 
+<div 
+    *ngIf="simpleSearch && tipo == 'mitico'" 
+    class="PokemonCardMitico"
+>
+    <img [src]="getImagePokemon()">
+    <br> {{pokemon}}
+    <br> DexID: {{numberOfDex}}
+    <ng-container *ngIf="!carregarMaisInformacoes">
+        <br> <button (click)="maisInformacoes(pokemon)" mat-raised-button class="ButonMore">+</button>
+    </ng-container>
+
+    <ng-container *ngIf="carregarMaisInformacoes">
+        <br> <button mat-raised-button class="ButtonExibindo">Exibindo</button>
+    </ng-container>
+</div>
+
 <div class="modal" *ngIf="modalAberta">
     <div 
     *ngIf="simpleSearch" 

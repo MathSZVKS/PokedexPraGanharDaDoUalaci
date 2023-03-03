@@ -3,8 +3,6 @@
     <button (click)="alterarAbaAtiva('subLendarios')" class="buttonNavBar" mat-button>Pseudo-Lendários</button>
     <button (click)="alterarAbaAtiva('lendarios')" class="buttonNavBar" mat-button>Lendários</button>
     <button (click)="alterarAbaAtiva('miticos')" class="buttonNavBar" mat-button>Miticos</button>
-    <button (click)="alterarAbaAtiva('recentes')" class="buttonNavBar" mat-button>Pokémons Recentes</button>
-    <button (click)="alterarAbaAtiva('sprites')" class="buttonNavBar" mat-button>Sprites</button>
 </div>
 
 <input #mySearch 
@@ -52,6 +50,15 @@
         [numberOfDex]="lendario.id"
         [simpleSearch]="simpleSearch"
         [tipo]="'lendario'"
+    ></app-pokemon-card>
+</div>
+
+<div *ngIf="simpleSearch && abaAtiva == 'miticos'" class="pokemon-list">
+    <app-pokemon-card *ngFor="let mitico of miticos"
+        [pokemon]="mitico['name']"
+        [numberOfDex]="mitico.id"
+        [simpleSearch]="simpleSearch"
+        [tipo]="'mitico'"
     ></app-pokemon-card>
 </div>
 
